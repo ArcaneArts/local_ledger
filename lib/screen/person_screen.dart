@@ -16,7 +16,7 @@ class PersonScreen extends StatelessWidget {
   Widget build(BuildContext context) => StreamBuilder<Person>(
         stream:
             ledgerService.stream().map((event) => event.getPeople().firstWhere(
-                  (element) => element.id == person.id,
+                  (element) => element.name == person.name,
                 )),
         builder: (context, snap) => snap.hasData
             ? Scaffold(
